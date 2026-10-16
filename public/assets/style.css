@@ -331,3 +331,24 @@ body.dz nav.main a{font-size:12px}
 .post p:first-letter{}
 .post .lead{font-style:italic;color:var(--violet)}
 section.alt .pcard{background:#FFFDF8}
+/* certifications under the recognition numbers */
+.honors .creds{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 12px;margin:30px 0 0}
+.honors .creds span{border:1px solid rgba(200,164,92,.55);border-radius:999px;padding:7px 16px;font-family:var(--caps);font-size:12px;letter-spacing:.12em;color:#E9D5A6;background:rgba(255,255,255,.03)}
+/* ==== home: first the doctor himself (the photo fills the first screen), then his words, then the honors ==== */
+.dzopen{position:relative;padding:0;height:calc(100vh - 64px);height:calc(100svh - 64px);min-height:420px;max-height:62vw;overflow:hidden;background:#4A3B78}
+.dzopen picture,.dzopen img{display:block;width:100%;height:100%;max-width:none}
+.dzopen img{object-fit:cover;object-position:50% 22%;animation:dzrise 2.4s cubic-bezier(.2,.7,.2,1) both}
+.dzopen:after{content:"";position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(180deg,rgba(23,19,42,0) 0%,rgba(23,19,42,.5) 55%,var(--night) 100%);pointer-events:none}
+.dzopen .cue{position:absolute;left:50%;bottom:14px;z-index:2;width:48px;height:48px;margin-left:-24px;display:grid;place-items:center;color:var(--gold2);border-radius:50%;animation:dzbob 2.8s ease-in-out infinite}
+.dzopen .cue:hover{color:#F1E3BE}
+@keyframes dzrise{from{transform:scale(1.04)}to{transform:none}}
+@keyframes dzbob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@media (prefers-reduced-motion:reduce){.dzopen img,.dzopen .cue{animation:none}}
+/* phones and tall screens: the tall version of the photo fills the screen */
+@media (max-aspect-ratio:4/5){.dzopen{min-height:460px;max-height:175vw}.dzopen img{object-position:50% 16%}}
+body.dz .hero.dzintro{background:radial-gradient(ellipse 90% 85% at 50% 100%,#2A2052 0%,var(--night) 70%);padding:34px 0 66px;text-align:center;scroll-margin-top:64px}
+.dzintro h1{font-size:clamp(34px,5.2vw,58px);letter-spacing:.1em}
+.dzintro .lede{max-width:640px}
+.dzintro .sub{text-wrap:balance}
+.dzintro .btns{margin-top:30px}
+.door img.plate{object-fit:cover;object-position:center;background:#000}
